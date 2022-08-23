@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Users Page2</title>
+</head>
+<body>
+<h1>Update User Info</h1>
+<h2>View users</h2>
+
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Date of birth</th>
+  </tr>
+  <tr th:each="u: ${users}" >
+    <td th:text="${u.id}"></td>
+    <td th:text="${u.name}"></td>
+    <td th:text="${u.email}"></td>
+    <td th:text="${u.dateOfBirth}"></td>
+  </tr>
+</table>
+
+<h2>Update user</h2>
+<form action="/updateUser" method="post">
+  User ID: <input type="number" name="id"><br />
+  Name: <input type="text" name="name"><br />
+  Email: <input type="email"  name="email"><br />
+  Date of birth:<input type="date" name="dateOfBirthString"><br />
+  <button type="submit">Update</button>
+</form>
+</body>
+</html>

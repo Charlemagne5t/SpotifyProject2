@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Users Page1</title>
+</head>
+<body>
+<h1>Delete Users Page</h1>
+<h2>View users</h2>
+
+<table>
+  <tr>
+    <th>User name</th>
+    <th>User email</th>
+  </tr>
+  <tr th:each="u: ${users}" >
+    <td th:text="${u.name}"></td>
+    <td th:text="${u.email}"></td>
+  </tr>
+</table>
+
+<h2>Delete user</h2>
+<form action="/deleteUsers" method="post">
+  Name: <input type="text" name="username"><br />
+  <button type="submit">Delete user</button>
+</form>
+</body>
+</html>

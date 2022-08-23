@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Find User bu ID</title>
+</head>
+<body>
+
+<h2>View User</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Date of birth</th>
+  </tr>
+  <tr th:each="u: ${user}" >
+    <td th:text="${u.id}"></td>
+    <td th:text="${u.name}"></td>
+    <td th:text="${u.email}"></td>
+    <td th:text="${u.dateOfBirth}"></td>
+  </tr>
+
+</table>
+
+<h2>Playlists</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  <tr th:each="p: ${user.playlists}" >
+    <td th:text="${p.id}"></td>
+    <td th:text="${p.name}"></td>
+  </tr>
+
+
+</body>
+</html>

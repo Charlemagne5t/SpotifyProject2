@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>Welcome to Spotify <span th:style="'color:' + ${color}"
+                  th:text="${username}"></span>!</h1>
+
+<p>Please select an option</p>
+<ol>
+    <li><a href="users.html" th:href="@{/users}">Users List</a></li>
+    <li><a href="updateUser.html" th:href="@{/updateUser}">Update User</a></li>
+    <li><a href="deleteUsers.html" th:href="@{/deleteUsers}">Delete user</a></li>
+</ol>
+</body>
+</html>
